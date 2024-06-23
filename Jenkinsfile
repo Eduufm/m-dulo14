@@ -17,5 +17,10 @@ pipeline {
                 bat 'NO_COLOR=1 npm run cy:run'
             }
         }
+        stage('Checkout') {
+            steps {
+                script {
+                    checkout scm
+                }
     }
 }
