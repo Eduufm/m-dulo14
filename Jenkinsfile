@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14/tree/main'
+                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14.git'
                 bat 'npm install'
             }
         }
