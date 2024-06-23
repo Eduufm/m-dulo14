@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14/tree/Pipeline'
+                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14/tree/main'
                 bat 'npm install'
             }
         }
         stage('Test') {
             steps {
-               bat '''set NO_COLOR=1 
-               npm test'''
+               bat '''set NO_COLOR=1
+npm test'''
             }
         }
     }
