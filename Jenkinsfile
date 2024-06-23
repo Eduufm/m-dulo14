@@ -1,26 +1,18 @@
 pipeline {
     agent any
+
     stages {
-        stage('Clonar o repositorio') {
+        stage('Setup') {
             steps {
-                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14'
-            
-            }
-        }
-        stage('instalar dependencias') {
-            steps {
+                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14/tree/Pipeline'
                 bat 'npm install'
             }
         }
-        stage('Executar Testes') {
+        stage('Test') {
             steps {
-                bat 'NO_COLOR=1 npm run cy:run'
+               bat '''set NO_COLOR=1 
+               npm test'''
             }
         }
-        stage('Checkout') {
-            steps {
-                script {
-                    checkout scm
-                }
     }
 }
