@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clonar o repositorio') {
             steps {
-                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14/tree/main/teste-api-ebac'
+                git branch: 'main', url: 'https://github.com/Eduufm/m-dulo14'
             }
         }
         stage('instalar dependencias') {
